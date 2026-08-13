@@ -55,9 +55,9 @@ First, you need to ...
     # indented code block.
     ```
 
-1. If you need to include a acreenshot, resize it to an appropriate size (so any "normal" formatted text in a partial screenshot is roughly the same size as this text - generally try to make screenshots of full application windows 1200x900px (approx)). Store images in a **Media** subfolder and use markdown to add it to the page (remembering that file and folder names are case-sensitive). If the image is in a list, indent it, like this:
+1. If you need to include a screenshot, resize it to an appropriate size (so any "normal" formatted text in a partial screenshot is roughly the same size as this text - generally try to make screenshots of full application windows 1200x900px (approx)). Store images in a **Media** subfolder and use markdown to add it to the page (remembering that file and folder names are case-sensitive). If the image is in a list, indent it, like this:
 
-    ![A screenshot of an application.](./Media/edge-copilot.png) 
+    ![A screenshot of an application.](./Media/edge-copilot.png)
 
 1. If you need to explain why something is done the way it is, or provide additional context or links to info, use a note like this:
 
@@ -66,7 +66,7 @@ First, you need to ...
 1. Be flexible when providing instructions that might vary between self-paced and hosted lab environments. For example:
     - "Sign in using your Azure credentials" (assuming there were Learn-specific instructions to use a personal subscription or create a trial in the Learn exercise page, and ILT-specific instructions to use provided cloudslice credentials in the Skillable lab profile)
     - "Select an existing resource group or create a new one" (assuming that if a Skillable CS-R cloudslice is used, you included a note in the lab profile telling the learner which resource group they should use)
-    - Try to use consistent phrases for anything that might need to be "overwritten" by the replacement-text feature in thw Skillable profile.
+    - Try to use consistent phrases for anything that might need to be "overwritten" by the replacement-text feature in the Skillable profile.
     <!-- The key point is that this markdown file should be environment-agnostic - you need to provide explicit details of things that can vary OUTSIDE of this file (in the Learn exercise page or the Skillable lab profile instructions) -->
 1. etc.
 
