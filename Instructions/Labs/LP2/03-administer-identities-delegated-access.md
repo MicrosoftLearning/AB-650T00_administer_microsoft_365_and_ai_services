@@ -69,19 +69,14 @@ The file holds two columns only, `DisplayName` and `MailNickname`, with no passw
 
 1. On **SEA-DEV1**, open **Windows PowerShell** from the taskbar.
 
-1. Create the new-hire file:
+1. Display the new-hire file on the **AllFiles (F:)** drive, and confirm that it lists five new hires:
 
    ```powershell
-   New-Item -ItemType Directory -Path C:\Labfiles\03 -Force | Out-Null
-   @"
-   DisplayName,MailNickname
-   Priya Shah,priyas
-   Jamie Chen,jamiec
-   Alex Morgan,alexm
-   Dana Reyes,danar
-   Sam Okafor,samo
-   "@ | Set-Content -Path C:\Labfiles\03\new-hires.csv
+   Get-Content -Path "F:\Lab03\new-hires.csv"
    ```
+
+   > [!NOTE]
+   > If you aren't using the hosted lab environment, download [`new-hires.csv`](../../../Allfiles/Lab03/new-hires.csv) and use its path wherever these steps use `F:\Lab03\new-hires.csv`.
 
 1. Set your assigned tenant domain and import the file:
 
@@ -89,7 +84,7 @@ The file holds two columns only, `DisplayName` and `MailNickname`, with no passw
    $tenantDomain = "<yourtenant>.onmicrosoft.com"
    if ($tenantDomain -like "*<*>*") { throw "Set `$tenantDomain to your assigned tenant domain first." }
    $requiredColumns = @("DisplayName", "MailNickname")
-   $newHires = @(Import-Csv -Path "C:\Labfiles\03\new-hires.csv")
+   $newHires = @(Import-Csv -Path "F:\Lab03\new-hires.csv")
    if ($newHires.Count -eq 0) { throw "The CSV contains no rows." }
    ```
 

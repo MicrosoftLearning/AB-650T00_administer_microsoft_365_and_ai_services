@@ -1,7 +1,9 @@
 remote_theme: MicrosoftLearning/Jekyll-Theme
+title: 'AB-650: Administer Microsoft 365 and AI services'
 exclude:
   - readme.md
   - .github/
+  - tools/
 header_pages:
   - index.html
 author: Microsoft Learning
@@ -11,5 +13,14 @@ plugins:
   - jekyll-sitemap
   - jekyll-mentions
   - jemoji
-markdown: GFM
-title: 'AB-650: Administer Microsoft 365 and AI services'
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    disable: true
+# Lab guides, sample case pages, and the getting-started page use the course layout.
+defaults:
+  - scope:
+      path: "Instructions"
+    values:
+      layout: lab
