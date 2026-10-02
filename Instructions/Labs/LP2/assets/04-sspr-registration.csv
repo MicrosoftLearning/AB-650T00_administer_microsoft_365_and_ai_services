@@ -1,0 +1,6 @@
+DisplayName,UserPrincipalName,GroupMembership,SsprEnabled,SsprRegistered,SsprCapable,RegisteredMethods,Notes
+Priya Shah,priyas@<your-verified-domain>,Engineering,Yes,Yes,Yes,"Microsoft Authenticator; Mobile phone (SMS)",Enabled-Registered-Capable baseline
+Jamie Chen,jamiec@<your-verified-domain>,Engineering,Yes,No,No,"Mobile phone (SMS)",Enabled but only one eligible method registered
+Alex Morgan,alexm@<your-verified-domain>,Engineering,Yes,Yes,No,"Email; Security questions",Registered methods not both currently allowed by policy
+Dana Reyes,danar@<your-verified-domain>,Engineering,Yes,Yes,Yes,"Microsoft Authenticator; Email",Capable but reported a failed reset (investigate error/activity)
+Sam Okafor,samo@<your-verified-domain>,Sales,No,No,No,"Mobile phone (SMS)",Out of scope - not in the engineering group

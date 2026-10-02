@@ -1,0 +1,9 @@
+Group,UserPrincipalName,IntendedFunded,CoworkCreditsConsumed,ReportWindow,DataLabel,Note
+Cowork-Pilot-Finance,fin-anaya@contoso-practice,Yes,120,2026-09-01_to_2026-09-30,Practice data (not paid usage),Funded pilot user; consumption consistent with intended scope
+Cowork-Pilot-Finance,fin-borah@contoso-practice,Yes,95,2026-09-01_to_2026-09-30,Practice data (not paid usage),Funded pilot user
+Cowork-Pilot-Finance,fin-chen@contoso-practice,Yes,60,2026-09-01_to_2026-09-30,Practice data (not paid usage),Funded pilot user
+Cowork-Pilot-Finance,fin-diaz@contoso-practice,Yes,0,2026-09-01_to_2026-09-30,Practice data (not paid usage),Funded but no consumption in window
+Cowork-Pilot-Legal,leg-emet@contoso-practice,No,0,2026-09-01_to_2026-09-30,Practice data (not paid usage),Intended excluded from all Cowork-selecting policies; no access and no consumption expected
+Cowork-Pilot-Legal,leg-frost@contoso-practice,No,0,2026-09-01_to_2026-09-30,Practice data (not paid usage),Intended excluded from all Cowork-selecting policies; no access and no consumption expected
+Cowork-Pilot-Legal,leg-gupta@contoso-practice,No,45,2026-09-01_to_2026-09-30,Practice data (not paid usage),EXCEPTION: Legal was intended excluded yet shows consumption during this report window - investigate which Cowork-selecting policy covered the user at that time and whether the overlap persists now. A low limit does not deny access. Check policy history and report latency; do not presume a user violation.
+Cowork-Pilot-Legal,leg-haas@contoso-practice,No,0,2026-09-01_to_2026-09-30,Practice data (not paid usage),Intended excluded from all Cowork-selecting policies; no access and no consumption expected

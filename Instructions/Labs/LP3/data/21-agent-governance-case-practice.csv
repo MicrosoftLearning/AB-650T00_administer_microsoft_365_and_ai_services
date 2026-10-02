@@ -1,0 +1,4 @@
+CaseId,RecordId,Kind,TimeUTC,Agent,Content,Signal,Policy,Provenance
+AB650-21,S1,Mock audit record,2026-09-22T14:10:00Z,Finance Insights Agent,Contoso_Finance_Policy.docx,Fictional access event; actual actor and permissions unknown,None,Practice data
+AB650-21,S2,Mock DLP alert,2026-09-22T14:12:00Z,Finance Insights Agent,Contoso_Finance_Policy.docx,Potential sensitive-data match; confirm rule and content before attributing exposure,Sample Copilot DLP Rule,Practice data
+AB650-21,S3,Mock analyst note,2026-09-22T14:20:00Z,Finance Insights Agent,Contoso_Finance_Policy.docx,Policy scope and file ACL must be checked before proposing a corrective action,None,Practice data
