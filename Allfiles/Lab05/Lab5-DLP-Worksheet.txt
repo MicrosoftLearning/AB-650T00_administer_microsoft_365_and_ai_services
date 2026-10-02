@@ -1,0 +1,40 @@
+LAB 5, EXERCISE 2 - DLP AND GOVERNANCE WORKSHEET
+Copy this file to Documents before you edit it. The AllFiles (F:) drive is read-only.
+Use only the sample data from the lab. Don't record real customer or financial data.
+
+TASK 1 - DLP POLICY IN SIMULATION MODE
+Policy name:
+Locations:
+Devices location:                 (record "Device DLP not tested")
+Conditions:
+Action:
+Policy mode:
+
+TASK 2 - SIMULATION EVIDENCE
+External share with Fabrikam (matched?):
+Internal share with Nestor (matched?):
+Where you found the evidence:
+If no result yet, record "DLP simulation results pending" and the date and time:
+
+TASK 3 - RETENTION LABEL
+Label name:
+Retention period and action:
+Label available on Lab5-Retention-Test.docx?
+If not yet, record "Retention label availability pending" and the date and time:
+
+TASK 4 - DSPM
+Copilot interactions, prompts, and responses with sensitive data:
+Remediation plan actions (mark the ones you already completed):
+Overshared site or item, access pattern, and smallest remediation:
+If no assessment yet, record "DSPM assessment pending" and the date and time:
+
+SAMPLE CASE (05-dlp-dspm-evidence.md - not from your tenant)
+Matched policy:
+Matched rule:
+Affected user:
+Affected content:
+Workload:
+Sensitive information type:
+Severity:
+Site that needs remediation, and why:
+Smallest supported remediation:

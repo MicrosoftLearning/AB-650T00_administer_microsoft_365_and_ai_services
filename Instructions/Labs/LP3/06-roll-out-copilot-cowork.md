@@ -405,7 +405,10 @@ This task uses a sample case to practice diagnosis. It isn't a substitute for th
 > [!NOTE]
 > **Practice case, not from this tenant:** The CSV describes a designed historical-cost case. Don't search for the sample users or events in a portal, and don't merge the 45-credit value with your live usage record.
 
-1. On **SEA-DEV1**, open [`17-cowork-consumption-practice.csv`](data/17-cowork-consumption-practice.csv).
+1. On **SEA-DEV1**, open File Explorer and go to **AllFiles (F:)** > **Lab06**. Right-click `17-cowork-consumption-practice.csv`, and then select **Open with** > **Notepad**.
+
+   > [!NOTE]
+   > If you aren't using the hosted lab environment, download [`17-cowork-consumption-practice.csv`](../../../Allfiles/Lab06/17-cowork-consumption-practice.csv).
 
 1. Find the row where a `cowork-pilot-legal` user consumed **45** credits.
 

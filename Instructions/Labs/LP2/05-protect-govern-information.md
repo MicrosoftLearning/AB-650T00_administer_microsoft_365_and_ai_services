@@ -49,7 +49,7 @@ You complete this lab signed in as a tenant administrator. The following conditi
 | People | Nine ready-to-use sample people, already licensed for Microsoft 365 E7. You use Patti Fernandez, Nestor Wilke, and Alex Wilber in this lab. |
 | Groups | Seeded groups include **Finance Users** with Patti Fernandez and Nestor Wilke, but you create a separate Lab 5 test group for label publishing and encryption. |
 | Finance file | A copyable finance file from earlier labs. Use a copy only, such as the copy in the Lab 2 `LAB2-Finance` site, and leave the original Agent 365 knowledge source unchanged. |
-| Lab assets | `05-dlp-design-worksheet.md` for recording DLP design choices and `05-dlp-dspm-evidence.md` as a clearly labeled sample case. |
+| Lab files | **AllFiles (F:)** > **Lab05** contains the sensitive information type sample files and `Lab5-DLP-Worksheet.txt`. [`05-dlp-dspm-evidence.md`](./assets/05-dlp-dspm-evidence.md) is a clearly labeled sample case. |
 | Test client | **SEA-DEV2**, where you sign in as sample people to test label availability and protected-content access. |
 | Your access | An administrator account with the roles noted at the start of each exercise. |
 
@@ -95,7 +95,7 @@ A separate test group gives you a safe target for the label policy and the label
 
 The sample pattern is a `WG-` prefix, eight digits, a hyphen, and a check letter, such as `WG-48213077-K`. For more information, see [Create custom sensitive information types](https://learn.microsoft.com/purview/create-a-custom-sensitive-information-type).
 
-1. On **SEA-DEV1**, open **Notepad**, enter the following matching sample text, and save it to **Documents** as `Lab5-SIT-Match.txt`:
+1. On **SEA-DEV1**, open File Explorer and go to **AllFiles (F:)** > **Lab05**. You test the sensitive information type with two sample files there. `Lab5-SIT-Match.txt` contains values that should match:
 
    ```text
    WG-48213077-K
@@ -103,7 +103,7 @@ The sample pattern is a `WG-` prefix, eight digits, a hyphen, and a check letter
    wg-48213077-k
    ```
 
-1. In Notepad, create a new file with the following near-miss sample text, save it to **Documents** as `Lab5-SIT-NearMiss.txt`, and then close Notepad:
+   `Lab5-SIT-NearMiss.txt` contains near misses that shouldn't match:
 
    ```text
    WG-48213077
@@ -111,6 +111,9 @@ The sample pattern is a `WG-` prefix, eight digits, a hyphen, and a check letter
    WG-482130777-K
    WG-48213077-K9
    ```
+
+   > [!NOTE]
+   > If you aren't using the hosted lab environment, download [`Lab5-SIT-Match.txt`](../../../Allfiles/Lab05/Lab5-SIT-Match.txt) and [`Lab5-SIT-NearMiss.txt`](../../../Allfiles/Lab05/Lab5-SIT-NearMiss.txt) to **Documents**.
 
 1. In Microsoft Edge, open the **Microsoft Purview portal** at `https://purview.microsoft.com`.
 
@@ -138,13 +141,13 @@ The sample pattern is a `WG-` prefix, eight digits, a hyphen, and a check letter
 
 1. In **Sensitive info types**, search for `Woodgrove`, select **Woodgrove transaction reference**, and then select **Test** in the details pane.
 
-1. Select **Upload file**, select **Documents** > `Lab5-SIT-Match.txt`, and then select **Test**.
+1. Select **Upload file**, go to **AllFiles (F:)** > **Lab05**, select `Lab5-SIT-Match.txt`, and then select **Test**.
 
 1. On **Match results**, confirm that **Woodgrove transaction reference** reports **3 unique matches**, then select **Finish**.
 
    The results list the same three matches at **Low**, **Medium**, and **High** confidence because a match at the pattern's confidence level also satisfies the lower levels.
 
-1. Select **Test** again, upload `Lab5-SIT-NearMiss.txt`, and then select **Test**.
+1. Select **Test** again, upload `Lab5-SIT-NearMiss.txt` from the same folder, and then select **Test**.
 
 1. Confirm that **Match results** reports that no sensitive information was detected, then select **Finish**.
 
@@ -320,7 +323,10 @@ Simulation mode records matches without enforcing policy actions. For more infor
 
 1. In **Policies**, confirm that `Finance - transaction protection (simulation)` shows the mode **In simulation with notifications**.
 
-1. Open `05-dlp-design-worksheet.md` and record the policy name, locations, conditions, action, and simulation mode. Record **Device DLP not tested** for the Devices location.
+1. In File Explorer, copy `Lab5-DLP-Worksheet.txt` from **AllFiles (F:)** > **Lab05** to **Documents**, and then open the copy. The **AllFiles (F:)** drive is read-only, so edit only the copy. Record the policy name, locations, conditions, action, and simulation mode. Record **Device DLP not tested** for the Devices location.
+
+   > [!NOTE]
+   > If you aren't using the hosted lab environment, download [`Lab5-DLP-Worksheet.txt`](../../../Allfiles/Lab05/Lab5-DLP-Worksheet.txt).
 
 **You have successfully created a DLP policy in simulation mode.**
 
@@ -361,7 +367,7 @@ A simulation result can take time to appear. You record the live evidence if it 
 
 1. Confirm that a **DLP rule matched** row lists `Lab5-DLP-Simulation-Test.docx` for Patti with the policy `Finance - transaction protection (simulation)`. The internal share with Nestor doesn't match, because the rule covers only content shared outside the organization.
 
-1. In `05-dlp-design-worksheet.md`, record the match. If the file doesn't appear yet, record **DLP simulation results pending** with the current date and time.
+1. In `Lab5-DLP-Worksheet.txt`, record the match. If the file doesn't appear yet, record **DLP simulation results pending** with the current date and time.
 
 **You have successfully tested the DLP policy and recorded the simulation evidence or pending state.**
 
@@ -417,7 +423,7 @@ Retention governs how long content is kept or when it's removed. Use a separate 
 
 1. In the **Documents** library, select `Lab5-Retention-Test.docx`, then select **Details**. Under **Apply label**, select **Choose a label**. If **Finance transaction retention - test** is listed, select it and confirm that the field shows the label.
 
-1. If the label isn't listed yet, record **Retention label availability pending** with the current date and time in `05-dlp-design-worksheet.md`. Published retention labels can take up to seven days to appear. Close the InPrivate window.
+1. If the label isn't listed yet, record **Retention label availability pending** with the current date and time in `Lab5-DLP-Worksheet.txt`. Published retention labels can take up to seven days to appear. Close the InPrivate window.
 
 **You have successfully published a retention label for separate content or recorded propagation as pending.**
 
@@ -441,7 +447,7 @@ Data Security Posture Management (DSPM) combines data security posture and AI ac
 
 1. If default assessment results are available, record one overshared site or item, its access pattern, and the smallest reasonable remediation. Otherwise, record **DSPM assessment pending** with the current date and time. The default assessment runs weekly, so a new tenant might not have results yet.
 
-1. Open `05-dlp-dspm-evidence.md`. Treat it as **sample case evidence, not from this tenant**.
+1. Open [`05-dlp-dspm-evidence.md`](./assets/05-dlp-dspm-evidence.md). Treat it as **sample case evidence, not from this tenant**.
 
 1. In the sample DLP case, identify the matched policy, matched rule, affected user, affected content, workload, SIT, and severity.
 
@@ -455,7 +461,7 @@ Data Security Posture Management (DSPM) combines data security posture and AI ac
 
 | Symptom | Likely cause | Recovery |
 | --- | --- | --- |
-| The SIT test pane has no text box | The SIT **Test** pane accepts only an uploaded file. | Upload `Lab5-SIT-Match.txt` or `Lab5-SIT-NearMiss.txt` from **Documents**, one file at a time. |
+| The SIT test pane has no text box | The SIT **Test** pane accepts only an uploaded file. | Upload `Lab5-SIT-Match.txt` or `Lab5-SIT-NearMiss.txt` from **AllFiles (F:)** > **Lab05**, one file at a time. |
 | Woodgrove transaction reference doesn't appear in **Sensitive info types** | The list shows Microsoft-provided types first and isn't filtered. | Search for `Woodgrove`, or select **Refresh** and search again. |
 | The near-miss sample matches the SIT | The regular expression was entered with a missing boundary, digit count, hyphen, or letter class. | Compare the expression with `\b([Ww][Gg]-[0-9]{8}-[A-Za-z])\b`, correct it, and rerun both tests. |
 | The sensitivity label doesn't appear in Word for the web | Label policy or group membership propagation hasn't completed. | Wait up to 24 hours before troubleshooting label policy changes. For new group or membership changes, allow 24-48 hours and record the verification as pending. |
@@ -463,7 +469,7 @@ Data Security Posture Management (DSPM) combines data security posture and AI ac
 | The DLP policy blocks an action | The policy was turned on instead of left in simulation mode. | Edit the policy and set the mode back to **Run the policy in simulation mode**. Don't leave an enforced block in this lab. |
 | No DLP simulation event appears | Policy evaluation or activity reporting hasn't caught up, or the test activity didn't use content that matches the SIT. | Confirm the file contains `WG-48213077-K`, then record **DLP simulation results pending** and revisit the DLP simulation overview or **Activity explorer** later. |
 | The retention label doesn't appear on the item | Retention label publication is still distributing. | For SharePoint or OneDrive, wait at least one day and allow up to seven days before troubleshooting policy status. |
-| DSPM has no completed assessment or objective data | The default assessment runs weekly, and objective metrics need activity first. | Record **DSPM assessment pending**, then complete the sample-case interpretation from `05-dlp-dspm-evidence.md`. |
+| DSPM has no completed assessment or objective data | The default assessment runs weekly, and objective metrics need activity first. | Record **DSPM assessment pending**, then complete the sample-case interpretation from [`05-dlp-dspm-evidence.md`](./assets/05-dlp-dspm-evidence.md). |
 | The collection policy switches in DSPM setup can't be turned on | The collection policies use Purview pay-as-you-go billing, and no Azure subscription is linked to Purview. | Leave them off and select **Start setup**. Microsoft 365 Copilot interactions are captured without them. |
 | Submitting the DLP policy fails with an error | **Restrict access or encrypt the content in Microsoft 365 locations** with **Only people outside your organization** requires the external-sharing condition first. | Edit the rule so that **Content is shared from Microsoft 365** > **with people outside my organization** is the first condition, joined to **Content contains** with **AND**. |
 | A 30-day retention period can't be entered | The **Custom** retention period's days box accepts a maximum of 29. | Enter **0** years, **1** month, and **0** days. |
