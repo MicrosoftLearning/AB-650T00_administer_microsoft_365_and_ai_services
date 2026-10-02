@@ -14,6 +14,7 @@ layout: home
 {%- endfor -%}{%- endfor -%}
 <link rel="stylesheet" href="{{ '/assets/course/course.css' | relative_url }}?v={{ site.github.build_revision }}">
 <div class="course-index" markdown="0">
+<h1>Hands-on labs</h1>
 <p class="course-intro">These hands-on labs give you practice configuring, securing, and governing Microsoft 365 tenants, workloads, Microsoft 365 Copilot, and agents. They complement the AB-650 learning paths on Microsoft Learn.</p>
 <div class="course-start">
 <div><strong>New to these labs?</strong>Read about the lab environment, the AllFiles (F:) drive, and how the labs build on each other.</div>
