@@ -55,7 +55,7 @@ Navigation data comes from _data/course.yml, which tools/check_labs.py generates
                         <div class="rail-heading">Files for this lab</div>
                         <ul class="rail-files">
                             {%- for f in current.files %}
-                            <li><code>F:\{{ f | replace: '/', '\' }}</code><a href="{{ '/Allfiles/' | append: f | relative_url }}" download>Download</a></li>
+                            <li><span class="rail-file-name">{{ f | split: '/' | last }}</span><span class="rail-file-path">F:\{{ f | replace: '/', '\' }}</span><a href="{{ '/Allfiles/' | append: f | relative_url }}" download>Download</a></li>
                             {%- endfor %}
                         </ul>
                         {%- endif %}
