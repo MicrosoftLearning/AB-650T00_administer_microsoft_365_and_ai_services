@@ -1,0 +1,8 @@
+Workload,EnabledUsers,ActiveUsers,ActiveUsersRate,ReportWindowDays,DataAsOf,DataLabel
+Teams,200,96,0.48,30,2026-09-22,Practice data
+Outlook,200,84,0.42,30,2026-09-22,Practice data
+Word,200,72,0.36,30,2026-09-22,Practice data
+Excel,200,40,0.20,30,2026-09-22,Practice data
+PowerPoint,200,35,0.175,30,2026-09-22,Practice data
+Other,200,18,0.09,30,2026-09-22,Practice data
+TOTAL-unique-any-app,200,128,0.64,30,2026-09-22,Practice data

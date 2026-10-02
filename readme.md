@@ -1,16 +1,17 @@
-# Microsoft Lab Exercises
-<!-- Change the title above as appropriate -->
+# AB-650: Administer Microsoft 365 and AI services
 
-<!-- Review the notes in the index.md file to set up the repo for GitHub Pages -->
+This repo contains the hands-on lab instructions and supporting files for course AB-650, Administer Microsoft 365 and AI services. The seven labs cover tenant operations, collaboration, identity, security, information protection, Microsoft 365 Copilot and Cowork, and agent governance.
 
-This repo contains exercises and supporting files for Microsoft skilling content.
+| Learning path | Labs |
+| --- | --- |
+| 1: Configure and manage Microsoft 365 tenants and workloads | Lab 1: Operate the Microsoft 365 tenant<br>Lab 2: Enable collaboration and govern its content |
+| 2: Govern and secure Microsoft 365 tenants and workloads | Lab 3: Administer identities and delegated access<br>Lab 4: Control sign-in and protect communications<br>Lab 5: Protect and govern information |
+| 3: Manage and secure Microsoft 365 AI services | Lab 6: Roll out and administer Copilot and Cowork<br>Lab 7: Govern agents and operate AI services |
 
-The exercises may be used in both self-paced skilling experiences on [Microsoft Learn](https://learn.microsoft.com) and in Microsoft authorized instructor-led training.
-<!-- Update the paragraph above with a link to a specific Learning Path or course as appropriate -->
+Lab instructions are in `Instructions/Labs`. Practice files for the labs are in `Instructions/Labs/LP2/assets` and `Instructions/Labs/LP3/data`.
 
 ## Information for MCTs
-<!-- You can remove this section if the exercises will not be used to support Microsoft Official Curriculum ILT -->
 
 **Are you an MCT?** - Have a look at our [GitHub User Guide for MCTs](https://microsoftlearning.github.io/MCT-User-Guide/)
 
-Any MCT (Microsoft Certified Trainer) can submit a pull request to the code or content in the GitHub repro. Microsoft and the course author will then triage and include content and lab code changes as needed. You can submit bugs, changes, improvement, and ideas. Find a new Azure or Microsoft 365 feature before we have? Submit a new demo!
+Any MCT (Microsoft Certified Trainer) can submit a pull request to the content in this GitHub repo. Microsoft and the course author will then triage and include content changes as needed. You can submit bugs, changes, improvements, and ideas.
