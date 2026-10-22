@@ -73,7 +73,7 @@ A small rollout wave is ready only when the license, readiness, and data-access 
 
 Use readiness and access evidence together. A license doesn't prove that the user's content boundary is safe.
 
-1. On **SEA-DEV1**, in Microsoft Edge, go to the **Microsoft 365 admin center** at `https://admin.microsoft.com` and sign in with your administrator account.
+1. On **SEA-DEV1**, in Microsoft Edge, go to the Microsoft 365 admin center at `https://admin.cloud.microsoft` and sign in with your administrator account.
 
 1. Select **Reports** > **Usage**. If **Reports** doesn't appear, select **Show all** first.
 
@@ -90,7 +90,7 @@ Use readiness and access evidence together. A license doesn't prove that the use
 
 1. Go to `https://<yourtenant>.sharepoint.com/sites/AB650-Finance-Review`. Select **Settings** > **Site permissions** > **Advanced permissions settings**.
 
-1. On the ribbon, select **Check Permissions**. Enter **Patti Fernandez**, select **Check Now**, and confirm **Read** through `AB650-Review-Finance`.
+1. On the ribbon, select **Check Permissions**. Enter and select **Patti Fernandez**, select **Check Now**, and confirm **Read** through `AB650-Review-Finance`.
 
 1. Repeat the check for **Diego Siciliani** and confirm **None**. If either result doesn't match, record it as a readiness blocker. Don't change the site in this lab.
 
@@ -98,17 +98,17 @@ Use readiness and access evidence together. A license doesn't prove that the use
 
 ### Task 2: Gate the rollout group
 
-The rollout group is the visible gate for the first wave. Membership must match the readiness decision you made in Task 1.
+The rollout group records the approved members of the first wave. Membership must match the readiness decision you made in Task 1. Group membership alone doesn't grant or restrict Microsoft Copilot access.
 
 1. On **SEA-DEV1**, in the Microsoft 365 admin center, select **Teams & groups** > **Active teams & groups**.
 
-1. Select the **Security groups** tab, then select **Add a security group**.
+1. Select the **Security groups** tab, then select **+ Add a security group**.
 
 1. In **Name**, enter `Copilot-Rollout-Wave1`, then select **Next**. Leave role assignment cleared, select **Next**, and then select **Create group**. Select **Close**. The group can take up to 5 minutes to appear in the list.
 
 1. Select `Copilot-Rollout-Wave1`, select the **Members** tab, and then select **View all and manage members**.
 
-1. Select **Add members**, search for and select **Megan Bowen**, and then select **Add**. Confirm that **Saved** appears.
+1. Select **+ Add members**, search for and select **Megan Bowen**, and then select **Add (1)**. Confirm that **Saved** appears.
 
 1. Close the pane. Confirm that the **Members** tab lists Megan Bowen as the only member.
 
@@ -119,6 +119,8 @@ The rollout group is the visible gate for the first wave. Membership must match 
 A grounded answer with a citation is the proof you need. A missing citation is a readiness signal to record as pending, not a substitute result.
 
 1. On **SEA-DEV2**, open an InPrivate window, go to `https://m365.cloud.microsoft/chat`, and sign in as `MeganB@<yourtenant>.onmicrosoft.com` with the user password provided by your lab hoster.
+
+1. Skip any welcome messages if they appear.
 
 1. Confirm that the account shows **M365 Copilot (Premium)** in the lower-left corner and that **Work IQ** is on at the top of the chat.
 
@@ -182,7 +184,7 @@ The admin policy sets the ceiling. A user can turn web content off when it's all
 
 1. On **SEA-DEV1**, in the Microsoft 365 admin center, select **Copilot** > **Settings** > **View all**.
 
-1. Select **Web search for Microsoft Copilot**, then select the link to the Microsoft 365 Apps admin center and review the **Policy Management** page.
+1. Select **Web search for Microsoft Copilot**, then select the link to the `Microsoft 365 Apps admin center` and review the **Policy Management** page.
 
 1. Review whether any policy configuration sets **Allow web search in Copilot**. If the page shows **You haven't created any policy configurations**, the policy isn't configured and web search is enabled by default.
 
@@ -199,7 +201,8 @@ The admin policy sets the ceiling. A user can turn web content off when it's all
 
 1. Record the state of the **Web search** toggle. If the admin policy allows web search, the toggle is on and Megan can turn it off. If the policy disables web search, the toggle isn't available.
 
-    > **Note:** Don't change the toggle. The user preference persists across sessions and would affect later tasks.
+   > [!NOTE]
+   > Don't change the toggle. The user preference persists across sessions and would affect later tasks.
 
 1. Close **Chat settings**, and then close the InPrivate window.
 
@@ -215,7 +218,7 @@ The connector is already created and indexed. You confirm its state, prove the i
 
 1. Select **Index browser**. In **Item Identifier**, enter `policy1`, then select **Submit**. Confirm that the item shows **Indexed**.
 
-1. Select **Permissions**. Confirm that Patti Fernandez shows **Allowed** and Diego Siciliani shows **Denied**.
+1. Select **Permissions**. Confirm that the **Access** column shows **Allowed** for Patti Fernandez and **Denied** for Diego Siciliani .
 
 1. Select **Check user access**, search for `Diego`, then select **Diego Siciliani**. Confirm that the result is **Denied access**. Repeat for Patti Fernandez and confirm **Allowed access**.
 
@@ -223,19 +226,23 @@ The connector is already created and indexed. You confirm its state, prove the i
 
 1. On **SEA-DEV2**, open an InPrivate window, go to `https://m365.cloud.microsoft`, and sign in as `PattiF@<yourtenant>.onmicrosoft.com` with the user password provided by your lab hoster.
 
-1. Select **Search**, enter `Finance review policy`, and press **Enter**. Confirm that **Finance review policy** appears in the results and that **Sources** lists **AB650-Policy-Connector**.
+1. Select **Search**, skip any welcome messages if they appear, enter `Finance review policy`, and press **Enter**. Confirm that **Finance review policy** appears in the results and that **Sources** lists **AB650-Policy-Connector**.
 
-    > **Note:** The **Contoso_Finance_Policy** results are SharePoint documents, not connector items.
+   > [!NOTE]
+   > The **Contoso_Finance_Policy** results are SharePoint documents, not connector items.
 
 1. Select **New chat**, enter `Find the Finance review policy.`, and press **Enter**. Confirm that Copilot quotes **Finance review access is limited to the assigned reviewer** and cites the **AB** connector source.
 
 1. Close the InPrivate window. Open a new InPrivate window, go to `https://m365.cloud.microsoft`, and sign in as `DiegoS@<yourtenant>.onmicrosoft.com` with the user password provided by your lab hoster.
 
+1. Skip any welcome messages if they appear.
+
 1. Repeat the search. Confirm that **Finance review policy** doesn't appear and that **Sources** doesn't list **AB650-Policy-Connector**.
 
 1. Repeat the Copilot prompt. Confirm that Copilot reports it couldn't find a matching policy and doesn't cite the connector.
 
-    > **Note:** Diego still sees **AB650-Policy-Connector** in **Chat settings** > **Sources**. The connection is visible, but item permissions trim what he can retrieve.
+    > [!NOTE]
+    > Diego still sees **AB650-Policy-Connector** in **Chat settings** > **Sources**. The connection is visible, but item permissions trim what he can retrieve.
 
 1. Close the InPrivate window.
 
@@ -293,13 +300,13 @@ The two groups make the access boundary explicit. Megan and Patti are training t
 
 1. On **SEA-DEV1**, in the Microsoft 365 admin center, select **Teams & groups** > **Active teams & groups**.
 
-1. Select the **Security groups** tab, then select **Add a security group**.
+1. Select the **Security groups** tab, then select **+ Add a security group**.
 
 1. In **Name**, enter `cowork-pilot-finance`, then select **Next**, **Next**, and **Create group**.
 
 1. Select **Add another Security group** and repeat the steps to create `cowork-pilot-legal`. Select **Close**.
 
-1. Select `cowork-pilot-finance`, then select **Members** > **View all and manage members** > **Add members**. Select **Megan Bowen** and **Patti Fernandez**, then select **Add**.
+1. Select `cowork-pilot-finance`, then select **Members** > **View all and manage members** > **+ Add members**. Search and select **Megan Bowen** and **Patti Fernandez**, then select **Add (2)**.
 
 1. Confirm that `cowork-pilot-finance` lists Megan and Patti and that `cowork-pilot-legal` has no members.
 
@@ -311,13 +318,13 @@ A spending policy that selects Cowork grants access to everyone in its scope. Th
 
 1. On **SEA-DEV1**, in the Microsoft 365 admin center, select **Copilot** > **Cost management**, then select **Get started**.
 
-1. In **Activate the default spending policy**, keep **Use Capacity Packs** selected and don't select pay-as-you-go billing. Select **Customize setup configuration**.
+1. In **Activate the default spending policy for your organization**, keep **Use Capacity Packs** selected and don't select pay-as-you-go billing. Select **Customize setup configuration**.
 
-1. Select **Policy name**, enter `Cowork Finance Access`, then select **Save changes**.
+1. Select **Policy name**, enter `Cowork Finance Access` for **Spending policy name**, then select **Save changes**.
 
 1. Select **Budget scope**, select **Specific groups**, search for and select `cowork-pilot-finance`, then select **Save changes**.
 
-1. Select **Agents and services**. Confirm that **Copilot Cowork** and **Work IQ API** are selected, turn off **Allow new Agents and services as they become available**, then select **Save changes**.
+1. Select **Agents and services**. Expand **Microsoft Copilot**, confirm that **Cowork** and **Work IQ API for custom apps and agents** are selected, turn off **Allow new Agents and services as they become available**, then select **Save changes**.
 
 1. Select **Spending limit** and configure these settings:
 
@@ -328,13 +335,13 @@ A spending policy that selects Cowork grants access to everyone in its scope. Th
    | **Define alerts** | On |
    | **Send email to the following users** | **Patti Fernandez** |
    | **Alert when monthly spending reaches** | `90` **% of limit** |
-   | **Alert when a user's monthly spending reaches** | `2700` **Credits** |
-
+   
 1. Select **Save changes**, then select **Activate**.
 
 1. Select **Manage configuration**. On the **Configuration** tab, under **Spending policies**, confirm that **Cowork Finance Access** is **Enabled** for `cowork-pilot-finance` and is the only policy. `cowork-pilot-legal` isn't covered.
 
-   > **Note:** You can add more policies for other groups or all users. If a user is in more than one policy, the policy with the highest spending limit applies.
+   > [!NOTE]
+   > You can add more policies for other groups or all users. If a user is in more than one policy, the policy with the highest spending limit applies.
 
 **You have successfully configured funded Cowork access for the finance group.**
 
@@ -360,7 +367,8 @@ Megan has a Beacon GA decision meeting. You ask Cowork to build her decision bri
 
 1. In **Message Cowork**, enter `/cost`, select the **/cost** skill, and press **Enter**. Record the credits used for this task, the percentage of the monthly limit remaining, and the credits used this month.
 
-   > **Note:** `/cost` doesn't consume credits. It reports usage only after a task runs, and its totals are estimates, not billing records.
+   > [!NOTE]
+   > `/cost` doesn't consume credits. It reports usage only after a task runs, and its totals are estimates, not billing records.
 
 1. Select **View usage**. Review the **Cowork usage limit** bar for **Me** and **Group**, then close **Usage**.
 
@@ -375,6 +383,9 @@ Patti presents customer rollout at next week's exec review. You ask Cowork to bu
 1. On **SEA-DEV2**, open an InPrivate window, go to `https://m365.cloud.microsoft`, and sign in as `PattiF@<yourtenant>.onmicrosoft.com` with the user password provided by your lab hoster.
 
 1. Select **Cowork** at the top of the left pane. Confirm that **Great news! You have access to Cowork** appears.
+
+   > [!NOTE]
+   > If the **Great news! You have access to Cowork** message doesn´t appear, select **Request sent**. On **SEA-DEV1**, go to the **Microsoft 365 Admin Center**, then select **Copilot** > **Cowork**. Confirm that the pending request for **Patti Fernandez** appears, and then select **Go to users**. Select the checkbox next to **Patti Fernandez**, select **Resolve request**, select  **Approve request** and **cowork-pilot-finance** group . Then select **Assign to group**.
 
 1. In **Start a task**, enter this task, then press **Enter**:
 

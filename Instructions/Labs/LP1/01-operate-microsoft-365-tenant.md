@@ -66,7 +66,11 @@ Before your organization rolls out Microsoft 365 more widely, you set the tenant
 
 ### Task 1: Set the organization profile
 
-1. In the **Microsoft 365 admin center** at `https://admin.cloud.microsoft`, select **Show all** > **Settings** > **Org settings**.
+1. Go to the Microsoft 365 admin center at `https://admin.cloud.microsoft`.
+
+1. If prompted to set up multifactor authentication (MFA), select **Set up now** and follow the on-screen instructions to register an authentication method before continuing. After completing the setup, continue with the sign-in process and authenticate when prompted.
+
+1. Select **Show all** > **Settings** > **Org settings**.
 
 1. Select the **Organization profile** tab, then select **Organization information**.
 
@@ -81,7 +85,7 @@ Before your organization rolls out Microsoft 365 more widely, you set the tenant
    - **Last name:** `Deyoung`
    - **Address line 1:** `One Microsoft Way`
    - **City:** `Redmond`
-   - **State:** **Washington**
+   - **State:** Washington
    - **Zip:** `98052`
    - **Email:** Your administrator account
 
@@ -93,7 +97,7 @@ Before your organization rolls out Microsoft 365 more widely, you set the tenant
 
 1. Go back to **Settings** > **Org settings** > **Organization profile**, then select **Custom themes**.
 
-1. Select **Default theme**, then select the **Colors** tab.
+1. Select **+ Add theme**, then select the **Colors** tab.
 
 1. In **Navigation bar color**, enter `#0F6CBD`. Confirm that the contrast message doesn't report a contrast problem.
 
@@ -152,7 +156,7 @@ Your organization wants to license new hires through group membership instead of
 
 ### Task 1: Create two unlicensed users
 
-1. In the **Microsoft 365 admin center** at `https://admin.cloud.microsoft`, select **Users** > **Active users**.
+1. In the Microsoft 365 admin center at `https://admin.cloud.microsoft`, select **Users** > **Active users**.
 
 1. Select **Add a user**.
 
@@ -185,12 +189,12 @@ Your organization wants to license new hires through group membership instead of
 
 ### Task 2: Create a direct and a nested licensing group
 
-1. In the **Microsoft Entra admin center** at `https://entra.microsoft.com`, select **Groups** > **All groups**.
+1. Go to the **Microsoft Entra admin center** at `https://entra.microsoft.com` and select **Groups** > **All groups**.
 
 1. Select **New group** and enter the following:
-   - **Group type:** **Security**
+   - **Group type:** Security
    - **Group name:** `LAB1-Licensing-Direct`
-   - **Membership type:** **Assigned**
+   - **Membership type:** Assigned
 
 1. Under **Members**, select **No members selected**, search for and select **Adele Vance**, and then select **Select**.
 
@@ -198,7 +202,7 @@ Your organization wants to license new hires through group membership instead of
 
 1. Repeat steps 2–4 to create a second group:
    - **Group name:** `LAB1-Licensing-Nested`
-   - **Member:** **Grady Archie**
+   - **Member:** Grady Archie
 
 1. In **All groups**, open **LAB1-Licensing-Direct** and select **Members**.
 
@@ -210,7 +214,7 @@ Your organization wants to license new hires through group membership instead of
 
 ### Task 3: Assign E7 to the direct group
 
-1. In the **Microsoft 365 admin center**, select **Billing** > **Licenses**.
+1. In the Microsoft 365 admin center, select **Billing** > **Licenses**.
 
 1. Select **Microsoft 365 E7 (No Teams)**. Note the number of assigned licenses.
 
@@ -240,7 +244,7 @@ Grady is a member of **LAB1-Licensing-Nested**, which is itself a member of **LA
 
 1. Select **Billing** > **Licenses** > **Microsoft 365 E7 (No Teams)**.
 
-1. Select **Assign licenses**, search for and select `LAB1-Licensing-Nested`, and then select **Assign licenses**.
+1. Select **Assign licenses**. In **Search for a name or email address**, search for and select `LAB1-Licensing-Nested`, and then select **Assign licenses**.
 
 1. Close the confirmation pane. Confirm that both **LAB1-Licensing-Direct** and **LAB1-Licensing-Nested** are listed, and that the assigned count increased by **1**.
 
@@ -296,11 +300,13 @@ Users report that Copilot and Teams "are down." Before you escalate, you determi
    > [!NOTE]
    > An empty **Overview** means the tenant doesn't have enough location telemetry yet. It doesn't mean the network is healthy.
 
-1. Select **Network connectivity test**. The Microsoft 365 network connectivity test opens in a new tab.
+1. Select **Network connectivity test**. The **Microsoft 365 network connectivity test** opens in a new tab.
 
-1. Select **Sign in** and sign in with your administrator account so that the results are saved.
+1. If prompted, select **Sign in** and sign in with your administrator account so that the results are saved.
 
 1. Select **Run test**. When Microsoft Edge asks to use your location, select **Allow**.
+
+1. In the **Let Windows and apps access your location?** dialog, select **Yes**.
 
 1. When the report opens and `Connectivity.<id>.exe` finishes downloading, press **Ctrl+J**, and then select **Open file** under the downloaded file.
 
@@ -323,7 +329,7 @@ Users report that Copilot and Teams "are down." Before you escalate, you determi
 
 1. On **SEA-DEV1**, in the Microsoft 365 admin center, select **Show all** > **Settings** > **Microsoft 365 Backup**.
 
-1. Review the three setup steps: **Things to know**, **Connect a billing policy**, and **Start backing up**.
+1. Review the three setup steps: **Things to know before you start**, **Connect a billing policy**, and **Start backing up your data**.
 
 1. Under step 2, select **Go to Pay-as-you-go**.
 

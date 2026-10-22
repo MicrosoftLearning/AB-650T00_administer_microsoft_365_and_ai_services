@@ -62,7 +62,7 @@ You keep the work you create in this lab. Later exercises and later labs build o
 
 A support team needs a shared mailbox they can work from, a team with a restricted workstream for a subset of members, and a meeting policy that makes Copilot behavior predictable. You build all three and verify the participant's experience, not just the configuration.
 
-**Roles used:** **Exchange Administrator**, **User Administrator**, **Teams Administrator**, and **SharePoint Administrator**.
+**Roles used:** Exchange Administrator, User Administrator, Teams Administrator, and SharePoint Administrator.
 
 ### Task 1: Create a shared mailbox and delegate Full Access and Send As
 
@@ -70,7 +70,7 @@ Full Access lets a delegate open and manage a shared mailbox, but not send from 
 
 1. On **SEA-DEV1**, open the **Exchange admin center** at `https://admin.cloud.microsoft/exchange#/`.
 
-1. Select **Recipients** > **Mailboxes**, then select **Add a shared mailbox**.
+1. Select **Recipients** > **Mailboxes**, then select **+ Add a shared mailbox**.
 
 1. Enter the following, then select **Create**:
    - **Display name:** `Training Support`
@@ -82,7 +82,7 @@ Full Access lets a delegate open and manage a shared mailbox, but not send from 
 
 1. Next to **Send as**, select **Edit**. Select **+ Add members**, select **Diego Siciliani**, select **Save**, then select **Confirm**. Don't add **Send on behalf**, which shows the delegate's name in **From**. For more information, see [Manage permissions for recipients](https://learn.microsoft.com/exchange/recipients-in-exchange-online/manage-permissions-for-recipients).
 
-1. Close the pane. In the **Microsoft 365 admin center** at `https://admin.cloud.microsoft`, select **Users** > **Active users**, then select **Training Support**. Confirm that the account shows **Sign-in blocked**. Delegates reach the mailbox through their own accounts.
+1. Close the pane. In the Microsoft 365 admin center at `https://admin.cloud.microsoft`, select **Users** > **Active users**, then select **Training Support**. Confirm that the account shows **Sign-in blocked**. Delegates reach the mailbox through their own accounts.
 
 1. Switch to **SEA-DEV2**. In Microsoft Edge, open an InPrivate window (**Ctrl+Shift+N**), go to `https://outlook.office.com`, and sign in as `DiegoS@<yourtenant>.onmicrosoft.com` with the user password provided by your lab hoster.
 
@@ -90,14 +90,14 @@ Full Access lets a delegate open and manage a shared mailbox, but not send from 
 
 1. Select the message body. Select the **Options** tab, select **Show fields**, then select **Show From**.
 
-1. Select **From**, select **Other email address...**, type `training-support@<yourtenant>.onmicrosoft.com`, then select **Use this address**.
+1. Select **From: DiegoS@<yourtenant>.onmicrosoft.com**, select **Other email address...**, type `training-support@<yourtenant>.onmicrosoft.com`, then select **Use this address: training-support@<yourtenant>.onmicrosoft.com**.
 
    > [!NOTE]
    > A newly created shared mailbox might not resolve by name yet, so type the full address.
 
 1. In **To**, enter **Joni Sherman**. In **Subject**, enter `Send As test`, then select **Send**.
 
-1. Select your profile picture, then select **Open another mailbox**. Enter `training-support@<yourtenant>.onmicrosoft.com`, then select **Open**. Confirm that the shared mailbox opens in a new tab. This confirms **Full Access**.
+1. Select your profile picture, then select **Open another mailbox**. Enter and select `training-support@<yourtenant>.onmicrosoft.com`, then select **Open**. Confirm that the shared mailbox opens in a new tab. This confirms **Full Access**.
 
    > [!NOTE]
    > Outlook can take time to add a shared mailbox to the folder list automatically. If it doesn't appear there yet, that doesn't mean Full Access failed. Opening it with **Open another mailbox** confirms the permission.
@@ -116,26 +116,26 @@ A private channel gives a subset of a team its own workstream and its own ShareP
 
 1. Switch to **SEA-DEV1**. Open **Microsoft Teams** at `https://teams.cloud.microsoft`. If a **Get to know Teams** dialog appears, select **Get Started**.
 
-1. Select **Chat**. Next to the new chat icon, select the **New items** dropdown arrow, then select **New team**.
+1. Select **Chat**. Next to the **New message** icon, select the **New items** dropdown arrow, then select **New team**.
 
 1. Enter the following, then select **Create**:
    - **Team name:** `DealRoom`
-   - **Team type:** **Private** (default)
+   - **Team type:** Private
    - **First channel name:** `General`
 
 1. In **Add members to DealRoom**, add **Megan Bowen**, **Alex Wilber**, **Isaiah Langer**, **Lynne Robbins**, and **Joni Sherman**.
 
 1. Next to **Megan Bowen** and **Alex Wilber**, change **Member** to **Owner**, then select **Add**. Two business owners keep the team accountable if one is unavailable.
 
-1. Next to **DealRoom**, select **More options (...)** > **Add channel**.
+1. Next to **DealRoom**, select **More team options (...)** > **Add channel**.
 
-1. Enter the channel name `Negotiation`. In **Choose a channel type**, select **Private**, then select **Create**.
+1. Enter `Negotiation` for the **Channel name**. In **Choose a channel type**, select **Private**, then select **Create**.
 
-1. In **Add members to the Negotiation channel**, add **Isaiah Langer** and **Lynne Robbins**, then select **Add**. Don't add Joni Sherman.
+1. In **Add members to the Negotiation channel**, add **Isaiah Langer** and **Lynne Robbins**, then select **Add**. Don't add **Joni Sherman**.
 
-1. Next to **Negotiation**, select **More options (...)** > **Manage channel**. On the **Members** tab, expand **Members and guests**. Next to **Isaiah Langer**, change **Channel role** to **Owner**.
+1. Next to **Negotiation**, select **More channel options (...)** > **Manage channel**. On the **Members** tab, expand **Members and guests**. Next to **Isaiah Langer**, change **Channel role** to **Owner**.
 
-1. In the **Microsoft 365 admin center**, select **Show all** > **SharePoint**. In the SharePoint admin center, select **Sites** > **Active sites**.
+1. In the Microsoft 365 admin center, select **Show all** > **SharePoint**. In the **SharePoint admin center**, select **Sites** > **Active sites**.
 
 1. Search for `DealRoom`. In the **Channel sites** column for **DealRoom**, select **1 site**. Record the channel site name, **DealRoom-Negotiation**, and its type, **Private channel**.
 
@@ -157,6 +157,8 @@ A private channel gives a subset of a team its own workstream and its own ShareP
 What Copilot can do in a Teams meeting depends on the meeting policy assigned to the organizer, the Copilot option the organizer selects, and whether a transcript is saved. For more information, see [Manage Copilot and transcription in Teams meetings](https://learn.microsoft.com/microsoftteams/copilot-teams-transcription).
 
 1. Switch to **SEA-DEV1**. Open the **Teams admin center** at `https://admin.teams.microsoft.com`.
+
+1. Sign in with your administrator account.
 
 1. Select **Meetings** > **Meeting policies**, then select **+ Add**.
 
@@ -194,7 +196,7 @@ What Copilot can do in a Teams meeting depends on the meeting policy assigned to
 
 Copilot grounds its answers only on content that a user's permissions already allow them to open, so an excessive permission grant is also a Copilot exposure. You create a governed finance site, then create a separate finance review site where an internal group has more access than it should. You prove the exposure, remove only the excessive grant, and choose a discovery control that limits broad discovery without changing who can open the content.
 
-**Roles used:** **SharePoint Administrator**, as the owner of the sites you create.
+**Roles used:** SharePoint Administrator, as the owner of the sites you create.
 
 ### Task 1: Create a finance site and add the sample file
 
@@ -202,19 +204,19 @@ Copilot grounds its answers only on content that a user's permissions already al
 
 1. Select **Documents** > **A365Lab** > **documents** > **finance**. Select **Contoso_Finance_Policy.docx**, then select **Download**. The file is saved to your **Downloads** folder.
 
-1. In the SharePoint admin center, select **Sites** > **Active sites**, then select **+ Create**.
+1. In the **SharePoint admin center**, select **Sites** > **Active sites**, then select **+ Create**.
 
 1. Select **Team site** > **Standard team** > **Use template**.
 
 1. In **Site name**, enter `LAB2-Finance`. The group email address and site address fill in automatically.
 
-1. In **Group owner**, select your administrator account, then select **Next**.
+1. In **Group owner**, enter and select your administrator account, then select **Next**.
 
-1. Leave **Privacy settings** set to **Private** and leave the default language, then select **Create site**. You can't change the site language later.
+1. Leave **Privacy settings** set to **Private - only members can access this site**, leave the default language and the default time zone, then select **Create site**. You can't change the site language later.
 
 1. In **Add site owners and members**, select **Finish**. If a survey appears, close it.
 
-1. Go to `https://<yourtenant>.sharepoint.com/sites/LAB2-Finance`. Select **+ Create or upload** > **Files upload**, select **Contoso_Finance_Policy.docx** from your **Downloads** folder, then select **Open**.
+1. Go to `https://<yourtenant>.sharepoint.com/sites/LAB2-Finance`. Select **Documents**, select **+ Create or upload** > **Files upload**, select **Contoso_Finance_Policy.docx** from your **Downloads** folder, then select **Open**.
 
 **You have successfully created a private finance site and added the sample file.**
 
@@ -228,27 +230,35 @@ You create a review site with two SharePoint groups. **AB650-Review-Finance** is
 
 1. Select **Communication site** > **Standard communication** > **Use template**.
 
-1. In **Site name**, enter `AB650-Finance-Review`. In **Site owner**, select your administrator account, then select **Next**. Select **Create site**. The site appears in **Active sites** after a short delay.
+1. In **Site name**, enter `AB650-Finance-Review`. In **Site owner**, enter and select your administrator account, then select **Next**. Select **Create site**. The site appears in **Active sites** after a short delay.
 
 1. Go to `https://<yourtenant>.sharepoint.com/sites/AB650-Finance-Review`. If a dialog appears, select **Maybe later**.
 
-1. Select **+ Create or upload** > **Files upload**, select **Contoso_Finance_Policy.docx** from your **Downloads** folder, then select **Open**.
+1. Select **Documents**, select **+ Create or upload** > **Files upload**, select **Contoso_Finance_Policy.docx** from your **Downloads** folder, then select **Open**.
 
 1. Select **Settings** (gear icon) > **Site permissions** > **Advanced permissions settings**.
 
-1. Select **Create Group**. In **Name**, enter `AB650-Review-Finance`. Under **Give Group Permission to this Site**, select **Read**, then select **Create**.
+1. Select **Create Group**. In **Name**, enter `AB650-Review-Finance`. Under **Choose the permission level group members get on this site: https://<yourtenant>.sharepoint.com/sites/AB650-Finance-Review**, select **Read - Can view pages and list items and download documents**, then select **Create**.
 
-1. On the group page, select **New**. Enter **Patti Fernandez**, then select **Share**.
+1. On the group page, select **New**. Enter and select **Patti Fernandez**, then select **Share**.
 
 1. Go back to **Advanced permissions settings**, and repeat the previous two steps to create `AB650-Review-Internal` with **Read** permission. Add **Diego Siciliani** and **Nestor Wilke**.
 
-1. Switch to **SEA-DEV2**. In Microsoft Edge, open an InPrivate window, go to `https://<yourtenant>.sharepoint.com/sites/AB650-Finance-Review/Shared%20Documents`, and sign in as `PattiF@<yourtenant>.onmicrosoft.com` with the user password provided by your lab hoster. If a **Please sign in** dialog appears, select **Not now**.
+1. Switch to **SEA-DEV2**. In Microsoft Edge, open an InPrivate window, go to `https://<yourtenant>`, and sign in as `PattiF@<yourtenant>.onmicrosoft.com` with the user password provided by your lab hoster. 
 
+1. If prompted, respond to the sign-in dialogs as follows:
+   - On **Stay signed in?**, select **No**.
+   - On **Please sign in**, select **Not now**.
+   
 1. Open **Contoso_Finance_Policy.docx**, and confirm that it opens.
 
-1. Close the InPrivate window, and repeat the previous two steps as `DiegoS@<yourtenant>.onmicrosoft.com`. Confirm that Diego can also open the document. This is the exposure.
+1. Close the InPrivate window, and repeat the previous three steps as `DiegoS@<yourtenant>.onmicrosoft.com`. Confirm that Diego can also open the document. This is the exposure.
 
-1. Close the InPrivate window. Switch to **SEA-DEV1**. On the **Advanced permissions settings** page, select **Check Permissions**. Enter **Diego Siciliani**, then select **Check Now**. Confirm that Diego has **Read** through the **AB650-Review-Internal** group.
+1. Close the InPrivate window and then switch to **SEA-DEV1**. 
+
+1. On the **Advanced permissions settings** page, select **Check Permissions**. Enter and select **Diego Siciliani**, then select **Check Now**. Confirm that Diego has **Read** through the **AB650-Review-Internal** group.
+
+1. Close the **AB650-Finance-Review: Check Permissions** dialog.
 
 1. Select the checkbox next to **AB650-Review-Internal**, select **Remove User Permissions**, then select **OK**.
 
@@ -279,15 +289,18 @@ Use this requirement to choose a control:
    > [!NOTE]
    > RCD requires SharePoint Advanced Management and Microsoft 365 Copilot. It doesn't revoke permissions or remove content from the index, and the change takes time to propagate. To block a group from opening content, correct the permission or use RAC instead.
 
-1. Switch to **SEA-DEV2**. Open an InPrivate window, go to `https://m365.cloud.microsoft`, and sign in as `PattiF@<yourtenant>.onmicrosoft.com` with the user password provided by your lab hoster. If a welcome dialog appears, close it.
+1. Switch to **SEA-DEV2**. Open an InPrivate window, go to `https://m365.cloud.microsoft`, and sign in as `PattiF@<yourtenant>.onmicrosoft.com` with the user password provided by your lab hoster.
+
+1. If a welcome dialog appears, close it.
 
 1. Select **New chat**, enter `Summarize Contoso_Finance_Policy from the AB650-Finance-Review site, and tell me which site each source is stored on.`, and press **Enter**. Record whether Copilot returns the document from **AB650-Finance-Review**. After RCD propagates, it doesn't. If it still does, record the time, because propagation can take a while on new sites.
 
 1. In the same window, go to `https://<yourtenant>.sharepoint.com/sites/AB650-Finance-Review/Shared%20Documents`. If a **Please sign in** dialog appears, select **Not now**. Select **Contoso_Finance_Policy.docx** to open it in Word for the web.
 
-1. Select **Copilot** at the lower right of the document. In **Message Copilot**, enter `Summarize this document in three bullets.`, and press **Enter**. Confirm that Copilot summarizes the policy and cites **Contoso_Finance_Policy**.
+1. Select **Copilot** at the lower right of the document. In **Copilot** pane, enter `Summarize this document in three bullets.`, and press **Enter**. Confirm that Copilot summarizes the policy and cites **Contoso_Finance_Policy**.
 
-    > **Note:** If the **Summary** card at the top of the document shows an error, ignore it and use the Copilot pane.
+   > [!NOTE]
+   > If the **Summary** card at the top of the document shows an error, ignore it and use the Copilot pane.
 
 1. Close the InPrivate window. Record two separate observations for the review site:
    - **Direct access:** Patti can still open the document and use Copilot on it.

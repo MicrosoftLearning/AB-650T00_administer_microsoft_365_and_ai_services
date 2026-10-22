@@ -117,7 +117,7 @@ The file holds two columns only, `DisplayName` and `MailNickname`, with no passw
    Connect-MgGraph -Scopes "User.Create"
    ```
 
-1. In the **Pick an account** dialog, select your administrator account. If a **Permissions requested** prompt appears, select **Accept**.
+1. In the **Pick an account** or **Sign in** dialog, sign in with your administrator account. If a **Permissions requested** prompt appears, select **Accept**.
 
 1. Define a helper that generates a strong temporary password. The value is never printed, saved, or logged:
 
@@ -171,7 +171,7 @@ The file holds two columns only, `DisplayName` and `MailNickname`, with no passw
    } else { $group = $groups[0] }
    ```
 
-1. In the **Pick an account** dialog, select your administrator account. If a **Permissions requested** prompt appears, select **Accept**.
+1. In the **Pick an account** dialog, select and sign in with your administrator account. If a **Permissions requested** prompt appears, select **Accept**.
 
 1. Add each created account, then verify the identities and the membership change:
 
@@ -232,7 +232,7 @@ You confirm that one bad row fails on its own without discarding the rest of the
 
 A **mail contact** routes mail to an external address and appears in the address book, but it can't sign in. A **guest** is a business-to-business (B2B) identity that can sign in and be granted access.
 
-1. On **SEA-DEV1**, in Microsoft Edge, go to the **Microsoft 365 admin center** at `https://admin.cloud.microsoft`. Select **Users** > **Contacts**, then select **Add a contact**.
+1. On **SEA-DEV1**, in Microsoft Edge, go to the Microsoft 365 admin center at `https://admin.cloud.microsoft`. Select **Users** > **Contacts**, then select **Add a contact**.
 
 1. Enter the following, then select **Add**:
    - **Display name:** `Woodgrove Bank - AP Desk`
@@ -255,7 +255,7 @@ A **mail contact** routes mail to an external address and appears in the address
 
 1. In **All users**, search for `Lab 3 Guest`, then select it. On the **Overview** tab, confirm that **User type** is **Guest** and that the B2B invitation shows **Pending acceptance**.
 
-1. (Optional) To see a guest redeem an invitation, repeat steps 5–7 with an external Microsoft account that you control and **Send invite message** selected. On **SEA-DEV2**, open an InPrivate window, select **Accept invitation** in the invitation email, sign in with that account, and select **Accept**. On **SEA-DEV1**, refresh the guest's **Overview** and confirm that the invitation shows **Accepted**. When you finish, delete that guest so no personal account stays in the lab tenant.
+1. (Optional) To see a guest redeem an invitation, repeat steps 5–7 with an external Microsoft account that you control and **Send invite message** selected. On **SEA-DEV2**, open an InPrivate window, go to `https://outlook.office.com`, and sign in with external Microsoft account. In the invitation email, select **Accept invitation**, sign in with that account, and select **Accept**. On **SEA-DEV1**, refresh the guest's **Overview** and confirm that the invitation shows **Accepted**. When you finish, delete that guest so no personal account stays in the lab tenant.
 
 **You have successfully created a mail contact and a guest user.**
 
@@ -275,7 +275,7 @@ An administrator's reach has two dimensions: *where* they can act and *when* the
 
 An administrative unit with assigned membership changes only when you change it, which suits one small, stable group. For details, see [Administrative units in Microsoft Entra ID](https://learn.microsoft.com/entra/identity/role-based-access-control/administrative-units).
 
-1. On **SEA-DEV1**, in the Microsoft Entra admin center, select **Entra ID** > **Roles & admins** > **Admin units**, then select **Add**.
+1. On **SEA-DEV1**, in the Microsoft Entra admin center, select **Entra ID** > **Roles & admins** > **Admin units**, then select **+ Add**.
 
 1. On the **Properties** tab, enter the name `Regional Operations`. Leave **Restricted management administrative unit** set to **No**.
 
@@ -283,7 +283,7 @@ An administrative unit with assigned membership changes only when you change it,
 
 1. Select **Review + create**, then select **Create**.
 
-1. In the **Admin units** list, select **Regional Operations**. On the **Users** page, select **Add member**.
+1. In the **Admin units** list, select **Regional Operations**. On the **Users** page, select **+ Add member**.
 
 1. Search for and select each new hire: **Priya Shah**, **Jamie Chen**, **Alex Morgan**, **Dana Reyes**, and **Sam Okafor**. Select **Select**.
 
@@ -296,7 +296,7 @@ An administrative unit with assigned membership changes only when you change it,
 
 ### Task 2: Verify the allowed and denied outcomes
 
-1. Switch to **SEA-DEV2**. In Microsoft Edge, open an InPrivate window, go to `https://entra.microsoft.com`, and sign in as `AllanD@<yourtenant>.onmicrosoft.com` with the user password provided by your lab hoster.
+1. Switch to **SEA-DEV2**. In Microsoft Edge, open an InPrivate window, go to `https://entra.microsoft.com`, and sign in as `AllanD@<yourtenant>.onmicrosoft.com` with the user password provided by your lab hoster. If the **Let's keep your account secure** prompt appears, select **Next**, and then follow the on-screen instructions to set up the required authentication method.
 
 1. Select **Entra ID** > **Users**, then select **Dana Reyes**. Select **Reset password**, and then select **Reset password** again. Confirm that a temporary password appears. This is the allowed outcome.
 
@@ -319,7 +319,7 @@ An **eligible** assignment requires the user to activate the role before they ga
 
 1. On the **Activation** tab, configure the following:
    - **Activation maximum duration (hours):** `4`
-   - **On activation, require:** **Azure MFA**
+   - **On activation, require:** Azure MFA
    - **Require justification on activation:** Selected (the default)
    - **Require approval to activate:** Selected
 
@@ -327,7 +327,7 @@ An **eligible** assignment requires the user to activate the role before they ga
 
 1. Select **Update**. Confirm that **Role setting update succeeded** appears.
 
-1. Under **Manage**, select **Roles**, then select **Message Center Reader**. Select **Add assignments**.
+1. Under **Manage**, select **Roles**, then select **Message Center Reader**. Select **+ Add assignments**.
 
 1. On the **Membership** tab, select **No member selected**. Search for and select **Joni Sherman**, select **Select**, and then select **Next**.
 
@@ -337,7 +337,9 @@ An **eligible** assignment requires the user to activate the role before they ga
 
 ### Task 4: Activate, approve, and correlate the audit trail
 
-1. Switch to **SEA-DEV2**. Open an InPrivate window, go to `https://entra.microsoft.com`, and sign in as `JoniS@<yourtenant>.onmicrosoft.com` with the user password provided by your lab hoster.
+1. Switch to **SEA-DEV2**. Open an InPrivate window, go to `https://entra.microsoft.com`, and sign in as `JoniS@<yourtenant>.onmicrosoft.com` with the user password provided by your lab hoster. 
+
+1. If the **Let's keep your account secure** prompt appears, select **Next**, and then follow the on-screen instructions to set up the required authentication method.
 
 1. Select **ID Governance** > **Privileged Identity Management** > **My roles**. On the **Eligible assignments** tab, find **Message Center Reader**, then select **Activate**.
 
@@ -345,25 +347,29 @@ An **eligible** assignment requires the user to activate the role before they ga
 
 1. Close the InPrivate window. Open a new InPrivate window, go to `https://entra.microsoft.com`, and sign in as `LynneR@<yourtenant>.onmicrosoft.com`.
 
+1. If the **Let's keep your account secure** prompt appears, select **Next**, and then follow the on-screen instructions to set up the required authentication method.
+
 1. Select **ID Governance** > **Privileged Identity Management** > **Approve requests**. Under **Requests for role activations**, select Joni's **Message Center Reader** request, then select **Approve**.
 
 1. In the **Approve Request** pane, review the requester, role, reason, and start and end times. In **Justification**, enter `Approved for message center review.` and then select **Confirm**.
 
 1. Close the InPrivate window. Open a new InPrivate window, and sign in as Joni again.
 
+1. If prompted to keep your account secure, select **Not now**.
+
 1. Select **ID Governance** > **Privileged Identity Management** > **My roles** > **Active assignments**. Confirm that **Message Center Reader** shows the state **Activated** with an end time four hours after the approval.
 
-1. Select **Deactivate**, and then select **Deactivate** again. Wait for all three stages to complete. Confirm that **Message Center Reader** no longer appears in **Active assignments**, but still appears in **Eligible assignments**.
+1. After the role has been active for at least five minutes, select **Deactivate**, and then select **Deactivate** again. Wait for all three stages to complete. Confirm that **Message Center Reader** no longer appears in **Active assignments**, but still appears in **Eligible assignments**.
 
-1. Select **Microsoft Entra roles**, and then under **Activity**, select **My audit**. Confirm that you can see the request, Lynne's approval, the activation, and the deactivation.
+1. Select **Microsoft Entra roles**, and then under **Activity**, select **My audit history**. Confirm that you can see the request, Lynne's approval, the activation, and the deactivation.
 
 1. Close the InPrivate window.
 
 1. Switch to **SEA-DEV1**. In the Microsoft Entra admin center, select **Entra ID** > **Monitoring & health** > **Audit logs**.
 
-1. Select the **Remove member from role completed (PIM deactivate)** event. On the **Activity** tab, scroll to the additional details and note the **RoleAssignmentRequestId**.
+1. Select the date next to **Remove member from role completed (PIM deactivate)** event. On the **Activity** tab, scroll to the additional details and note the **RoleAssignmentRequestId**.
 
-1. Close the event, and select the **Add member to role completed** event for the activation. Confirm that it shows the same **RoleAssignmentRequestId**, even though its **Correlation ID** is different.
+1. Close the event, and select the **Add member to role completed (PIM activation)** event for the activation. Confirm that it shows the same **RoleAssignmentRequestId**, even though its **Correlation ID** is different.
 
    > [!NOTE]
    > PIM processes approval and activation asynchronously, so one activation cycle can produce several correlation IDs. Use **RoleAssignmentRequestId** to connect the events. For details, see [View audit history for Microsoft Entra roles in PIM](https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-how-to-use-audit-log).
