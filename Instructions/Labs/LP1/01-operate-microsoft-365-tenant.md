@@ -91,6 +91,9 @@ Before your organization rolls out Microsoft 365 more widely, you set the tenant
 
 1. Select **Save**.
 
+> [!NOTE]
+> If you received the message **"Something failed on our end. Try again later."**, the sold-to address hasn't been updated. Close the **Edit sold-to address** pane and continue with Task 2, leaving the existing billing address unchanged. The remaining lab tasks don't depend on this address change.
+
 **You have successfully set the organization profile and sold-to address.**
 
 ### Task 2: Apply the company theme and conceal report names
